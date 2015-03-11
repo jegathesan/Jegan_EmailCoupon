@@ -1,0 +1,142 @@
+<?xml version="1.0"?>
+<!--
+/**
+ * JEGAN_EmailCoupon extension
+ * 
+ * NOTICE OF LICENSE
+ * 
+ * This source file is subject to the MIT License
+ * that is bundled with this package in the file LICENSE.txt.
+ * It is also available through the world-wide-web at this URL:
+ * http://opensource.org/licenses/mit-license.php
+ * 
+ * @category       JEGAN
+ * @package        JEGAN_EmailCoupon
+ * @copyright      Copyright (c) 2015
+ * @license        http://opensource.org/licenses/mit-license.php MIT License
+ */
+-->
+<config>
+    <modules>
+        <JEGAN_EmailCoupon>
+            <version>1.0.0</version>
+        </JEGAN_EmailCoupon>
+    </modules>
+    <global>
+        <resources>
+            <jegan_emailcoupon_setup>
+                <setup>
+                    <module>JEGAN_EmailCoupon</module>
+                    <class>JEGAN_EmailCoupon_Model_Resource_Setup</class>
+                </setup>
+            </jegan_emailcoupon_setup>
+        </resources>
+        <blocks>
+            <jegan_emailcoupon>
+                <class>JEGAN_EmailCoupon_Block</class>
+            </jegan_emailcoupon>
+        </blocks>
+        <helpers>
+            <jegan_emailcoupon>
+                <class>JEGAN_EmailCoupon_Helper</class>
+            </jegan_emailcoupon>
+        </helpers>
+        <events>
+            <sales_order_place_before>
+
+            </sales_order_place_before>
+        </events>
+        <models>
+            <jegan_emailcoupon>
+                <class>JEGAN_EmailCoupon_Model</class>
+                <resourceModel>jegan_emailcoupon_resource</resourceModel>
+            </jegan_emailcoupon>
+            <customer>
+                <rewrite>
+                    <customer>JEGAN_EmailCoupon_Model_Customer</customer>
+                </rewrite>
+            </customer>
+            <newsletter>
+                <rewrite>
+                    <subscriber>JEGAN_EmailCoupon_Model_Subscriber</subscriber>
+                </rewrite>
+            </newsletter>
+            <sales>
+                <rewrite>
+                    <order>JEGAN_EmailCoupon_Model_Order</order>
+                </rewrite>
+            </sales>
+            <jegan_emailcoupon_resource>
+                <class>JEGAN_EmailCoupon_Model_Resource</class>
+                <entities>
+                    <emailcoupon>
+                        <table>jegan_emailcoupon_emailcoupon</table>
+                    </emailcoupon>
+                    <eventcoupon>
+                        <table>jegan_emailcoupon_eventcoupon</table>
+                    </eventcoupon>
+                    <emailcoupon_store>
+                        <table>jegan_emailcoupon_emailcoupon_store</table>
+                    </emailcoupon_store>
+                    <eventcoupon_store>
+                        <table>jegan_emailcoupon_eventcoupon_store</table>
+                    </eventcoupon_store>
+                </entities>
+            </jegan_emailcoupon_resource>
+        </models>
+    </global>
+    <adminhtml>
+        <layout>
+            <updates>
+                <jegan_emailcoupon>
+                    <file>jegan_emailcoupon.xml</file>
+                </jegan_emailcoupon>
+            </updates>
+        </layout>
+        <translate>
+            <modules>
+                <JEGAN_EmailCoupon>
+                    <files>
+                        <default>JEGAN_EmailCoupon.csv</default>
+                    </files>
+                </JEGAN_EmailCoupon>
+            </modules>
+        </translate>
+        <global_search>
+            <emailcoupon>
+                <class>jegan_emailcoupon/adminhtml_search_emailcoupon</class>
+                <acl>jegan_emailcoupon</acl>
+            </emailcoupon>
+            <eventcoupon>
+                <class>jegan_emailcoupon/adminhtml_search_eventcoupon</class>
+                <acl>jegan_emailcoupon</acl>
+            </eventcoupon>
+        </global_search>
+    </adminhtml>
+    <admin>
+        <routers>
+            <adminhtml>
+                <args>
+                    <modules>
+                        <JEGAN_EmailCoupon before="Mage_Adminhtml">JEGAN_EmailCoupon_Adminhtml</JEGAN_EmailCoupon>
+                    </modules>
+                </args>
+            </adminhtml>
+        </routers>
+    </admin>
+    <default>
+        <jeganemailtabmenu>
+            <jeganeventcoupon>
+            </jeganeventcoupon>
+            <jegannewsletteremailcoupon>
+                <enable>0</enable>
+            </jegannewsletteremailcoupon>
+            <jeganfirstorderemailcoupon>
+                <enable>0</enable>
+            </jeganfirstorderemailcoupon>
+            <jegannewuseremailcoupon>
+                <enable>0</enable>
+            </jegannewuseremailcoupon>
+        </jeganemailtabmenu>
+    </default>
+</config>

@@ -1,0 +1,91 @@
+<?xml version="1.0"?>
+<!--
+/**
+ * JEGAN_EmailCoupon extension
+ * 
+ * NOTICE OF LICENSE
+ * 
+ * This source file is subject to the MIT License
+ * that is bundled with this package in the file LICENSE.txt.
+ * It is also available through the world-wide-web at this URL:
+ * http://opensource.org/licenses/mit-license.php
+ * 
+ * @category       JEGAN
+ * @package        JEGAN_EmailCoupon
+ * @copyright      Copyright (c) 2015
+ * @license        http://opensource.org/licenses/mit-license.php MIT License
+ */
+--> 
+<layout>
+    <adminhtml_emailcoupon_emailcoupon_index>
+        <reference name="menu">
+            <action method="setActive">
+                <menupath>jegan_emailcoupon/emailcoupon</menupath>
+            </action>
+        </reference>
+        <reference name="content">
+            <block type="jegan_emailcoupon/adminhtml_emailcoupon" name="emailcoupon" />
+
+        </reference>
+    </adminhtml_emailcoupon_emailcoupon_index>
+    <adminhtml_emailcoupon_emailcoupon_grid>
+        <block type="core/text_list" name="root" output="toHtml">
+            <block type="jegan_emailcoupon/adminhtml_emailcoupon_grid" name="emailcoupon_grid"/>
+        </block>
+    </adminhtml_emailcoupon_emailcoupon_grid>
+    <!-- Emailcoupon add/edit action -->
+    <adminhtml_emailcoupon_emailcoupon_edit>
+        <update handle="editor"/>
+        <reference name="menu">
+            <action method="setActive">
+                <menupath>jegan_emailcoupon/emailcoupon</menupath>
+            </action>
+        </reference>
+        <reference name="content">
+            <block type="jegan_emailcoupon/adminhtml_emailcoupon_edit" name="emailcoupon_edit"></block>
+        </reference>
+        <reference name="left">
+            <block type="jegan_emailcoupon/adminhtml_emailcoupon_edit_tabs" name="emailcoupon_tabs"></block>
+        </reference>
+    </adminhtml_emailcoupon_emailcoupon_edit>
+
+    <adminhtml_emailcoupon_eventcoupon_index>
+        <reference name="menu">
+            <action method="setActive">
+                <menupath>jegan_emailcoupon/eventcoupon</menupath>
+            </action>
+        </reference>
+        <reference name="content">
+            <block type="jegan_emailcoupon/adminhtml_eventcoupon" name="eventcoupon" />
+
+        </reference>
+    </adminhtml_emailcoupon_eventcoupon_index>
+    <adminhtml_emailcoupon_eventcoupon_grid>
+        <block type="core/text_list" name="root" output="toHtml">
+            <block type="jegan_emailcoupon/adminhtml_eventcoupon_grid" name="eventcoupon_grid"/>
+        </block>
+    </adminhtml_emailcoupon_eventcoupon_grid>
+
+    <adminhtml_emailcoupon_usercoupon_grid>
+        <block type="core/text_list" name="root" output="toHtml">
+            <block type="jegan_emailcoupon/adminhtml_usercoupon_grid" name="usercoupon_grid"/>
+        </block>
+    </adminhtml_emailcoupon_usercoupon_grid>
+
+    <!-- Eventcoupon add/edit action -->
+    <adminhtml_emailcoupon_eventcoupon_edit>
+        <update handle="editor"/>
+        <reference name="menu">
+            <action method="setActive">
+                <menupath>jegan_emailcoupon/eventcoupon</menupath>
+            </action>
+        </reference>
+        <reference name="content">
+            <block type="jegan_emailcoupon/adminhtml_eventcoupon_edit" name="eventcoupon_edit"></block>
+        </reference>
+        <reference name="left">
+            <block type="jegan_emailcoupon/adminhtml_eventcoupon_edit_tabs" name="eventcoupon_tabs"></block>
+        </reference>
+    </adminhtml_emailcoupon_eventcoupon_edit>
+
+</layout>

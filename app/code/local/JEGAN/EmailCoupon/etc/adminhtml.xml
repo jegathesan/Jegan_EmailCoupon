@@ -1,0 +1,92 @@
+<?xml version="1.0"?>
+<!--
+/**
+ * JEGAN_EmailCoupon extension
+ * 
+ * NOTICE OF LICENSE
+ * 
+ * This source file is subject to the MIT License
+ * that is bundled with this package in the file LICENSE.txt.
+ * It is also available through the world-wide-web at this URL:
+ * http://opensource.org/licenses/mit-license.php
+ * 
+ * @category       JEGAN
+ * @package        JEGAN_EmailCoupon
+ * @copyright      Copyright (c) 2015
+ * @license        http://opensource.org/licenses/mit-license.php MIT License
+ */
+-->
+<config>
+    <acl>
+        <resources>
+            <admin>
+                <children>
+                    <system>
+                        <children>
+                            <config>
+                                <children>
+                                    <jegan_emailcoupon translate="title" module="jegan_emailcoupon">
+                                        <title>EmailCoupon</title>
+                                    </jegan_emailcoupon>
+                                </children>
+                                <children>
+                                    <jeganemailtabmenu translate="title" module="jegan_emailcoupon">
+                                    </jeganemailtabmenu>
+                                    <jeganfirstorderemailcoupon translate="title" module="jegan_emailcoupon">
+                                    </jeganfirstorderemailcoupon>
+                                    <jegannewuseremailcoupon translate="title" module="jegan_emailcoupon">
+                                    </jegannewuseremailcoupon>
+                                    <jegannewsletteremailcoupon translate="title" module="jegan_emailcoupon">
+                                    </jegannewsletteremailcoupon>
+                                    <jeganeventcoupon translate="title" module="jegan_emailcoupon">
+                                    </jeganeventcoupon>
+
+                                </children>
+                            </config>
+                        </children>
+                    </system>
+                    <jegan_emailcoupon translate="title" module="jegan_emailcoupon">
+                        <title>JEGAN Email Coupon</title>
+                        <children>
+                            <emailcoupon translate="title" module="jegan_emailcoupon">
+                                <title>Email Coupon</title>
+                                <sort_order>0</sort_order>
+                            </emailcoupon>
+                            <eventcoupon translate="title" module="jegan_emailcoupon">
+                                <title>Event Coupon</title>
+                                <sort_order>10</sort_order>
+                            </eventcoupon>
+                            <emailcoupon_configure translate="title" module="jegan_emailcoupon">
+                                <title>Email Coupon Configuration</title>
+                                <sort_order>15</sort_order>
+                            </emailcoupon_configure>
+                        </children>
+                    </jegan_emailcoupon>
+                </children>
+            </admin>
+        </resources>
+    </acl>
+    <menu>
+        <jegan_emailcoupon translate="title" module="jegan_emailcoupon">
+            <title>JEGAN Email Coupon</title>
+            <sort_order>86</sort_order>
+            <children>
+                <emailcoupon translate="title" module="jegan_emailcoupon">
+                    <title>Email Coupon</title>
+                    <action>adminhtml/emailcoupon_emailcoupon</action>
+                    <sort_order>0</sort_order>
+                </emailcoupon>
+                <eventcoupon translate="title" module="jegan_emailcoupon">
+                    <title>Event Coupon</title>
+                    <action>adminhtml/emailcoupon_eventcoupon</action>
+                    <sort_order>10</sort_order>
+                </eventcoupon>
+                <emailcoupon_configure translate="title" module="jegan_emailcoupon">
+                    <title>Email Coupon Configuration</title>
+                    <action>adminhtml/system_config/edit/section/jeganemailtabmenu</action>
+                    <sort_order>15</sort_order>
+                </emailcoupon_configure>
+            </children>
+        </jegan_emailcoupon>
+    </menu>
+</config>
