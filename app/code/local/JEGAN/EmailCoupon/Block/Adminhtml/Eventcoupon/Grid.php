@@ -68,7 +68,7 @@ class JEGAN_EmailCoupon_Block_Adminhtml_Eventcoupon_Grid extends Mage_Adminhtml_
             'entity_id',
             array(
                 'header' => Mage::helper('jegan_emailcoupon')->__('Id'),
-                'index'  => '   entity_id',
+                'index'  => 'entity_id',
                 'type'   => 'number'
             )
         );
