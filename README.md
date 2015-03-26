@@ -53,3 +53,14 @@ Place this belowe line of code to show the coupon code.
         
          {{var  customer.couponCode}}
 
+# New Event
+
+  1. To create new email template for send coupon code goto System->Transactional Emails
+  2. Click 'Add New Template' buttton.
+  3. From there load any default templates.
+  4. And Edit that template as your wish.
+  5. Choose the 'Email Template' as created template name in System->Configuration->(JEGAN EMAIL COUPON) tab->New Event section
+  
+Place this belowe line of code to show the coupon code.
+        
+        {{var couponCode }}
